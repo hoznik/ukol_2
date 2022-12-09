@@ -55,14 +55,15 @@ for bod in souradnice_body:
         vzdalenost = vzdalenost_bodu(bod,mesto)
         if vzdalenost < min:
             min = vzdalenost
-    dvojice_bodu.append((bod,mesto))
+            min_mesto = mesto
+    dvojice_bodu.append((bod,min_mesto))
 
 with open('nejblizsi_body.txt', 'w') as f:
         for bod in dvojice_bodu:
             f.write("N {} E {} ===== N {} E {}\n".format(bod[0][0],bod[0][1],bod[1][0],bod[1][1]))
             
 reverse(souradnice_body)
-geocode_cities(1000)
+geocode_cities(70)
 
 
         
